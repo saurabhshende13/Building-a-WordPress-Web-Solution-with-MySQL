@@ -13,7 +13,7 @@ This project outlines the process of deploying a scalable WordPress web solution
 - [Steps](#steps)
   - [Step 1: Prepare the Web Server](#step-1-prepare-the-web-server)
   - [Step 2: Install WordPress on the Web Server](#step-2-install-wordpress-on-the-web-server)
-  - [Step 3: Install MySQL on the Database Server](#step-3-install-mysql-on-the-database-server)
+  - [Step 3: Prepare a Database Server](#step-3-Prepare-a-Database-Server)
   - [Step 4: Configure the Database](#step-4-configure-the-database)
   - [Step 5: Connect WordPress to the Database](#step-5-connect-wordpress-to-the-database)
 - [Conclusion](#conclusion)
@@ -238,14 +238,16 @@ The architecture diagram and reference files for this project can be found in th
    sudo setsebool -P httpd_can_network_connect=1
    ```
 
-### Step 3: Create a Database Server in Private Subnet in VPC01
-1. Update the repository and install MySQL:
+### Step 3: Prepare a Database Server
+1. Launch an EC2 instance to serve as the Database Server in Private Subnet in VPC01.
+
+2. Update the repository and install MySQL:
    ```bash
    sudo yum update
    sudo yum install mysql-server
    ```
 
-2. Ensure MySQL is running:
+3. Ensure MySQL is running:
    ```bash
    sudo systemctl restart mysqld
    sudo systemctl enable mysqld
