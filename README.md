@@ -28,21 +28,16 @@ The architecture diagram and reference files for this project can be found in th
 1. Launch an EC2 instance to serve as the **WordPress Web Server**.
 ![step1-01](steps/Step1-01.png)
 
-3. Create three EBS volumes, each 10 GiB, in the same Availability Zone as your EC2 instance.
+2. Create three EBS volumes, each 10 GiB, in the same Availability Zone as your EC2 instance.
 ![step1-02](steps/Step1-02.png)
 ![step1-03](steps/Step1-03.png)
 
-4. Open the Linux terminal to begin configuration.
+3. Open the Linux terminal to begin configuration.
    
-5. Use `lsblk` to inspect the attached block devices:
-
+4. Use `lsblk` to inspect the attached block devices:
 ![step1-04](steps/Step1-04.png)
 
-   ```bash
-   lsblk
-   ls /dev/
-   ```
-7. Use `df -h` to view all mounts and free space on the server:
+5. Use `df -h` to view all mounts and free space on the server:
    ```bash
    df -h
    ```
