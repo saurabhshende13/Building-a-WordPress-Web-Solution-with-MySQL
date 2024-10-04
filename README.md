@@ -32,6 +32,7 @@ The architecture diagram and reference files for this project can be found in th
 3. Create three EBS volumes, each 10 GiB, in the same Availability Zone as your EC2 instance.
    
 ![step1-02](steps/Step1-02.png)
+
 ![step1-03](steps/Step1-03.png)
 
 5. Open the Linux terminal to begin configuration.
