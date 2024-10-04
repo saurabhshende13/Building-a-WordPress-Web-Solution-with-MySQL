@@ -33,11 +33,11 @@ The architecture diagram and reference files for this project can be found in th
 3. Open the Linux terminal to begin configuration.
    
 4. Use `lsblk` to inspect the attached block devices:
+![step1-04](steps/Step1-04.png)
    ```bash
    lsblk
    ls /dev/
    ```
-   
 5. Use `df -h` to view all mounts and free space on the server:
    ```bash
    df -h
@@ -86,25 +86,25 @@ The architecture diagram and reference files for this project can be found in th
    Now,  your changes has been configured succesfuly, exit out of the gdisk console and do the same for the remaining disks.
    ```
 
-7. Verify the newly configured partitions:
+8. Verify the newly configured partitions:
    ```bash
    lsblk
    ```
 
-8. Install `lvm2` package and run `lvmdiskscan`:
+9. Install `lvm2` package and run `lvmdiskscan`:
    ```bash
    sudo yum install lvm2
    sudo lvmdiskscan
    ```
 
-9. Mark each disk as a physical volume (PV):
+10. Mark each disk as a physical volume (PV):
    ```bash
    sudo pvcreate /dev/xvdb1
    sudo pvcreate /dev/xvdc1
    sudo pvcreate /dev/xvdd1
    ```
 
-10. Verify PV creation:
+11. Verify PV creation:
    ```bash
    sudo pvs
    ```
