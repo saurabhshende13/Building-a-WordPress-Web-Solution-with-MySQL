@@ -268,7 +268,29 @@ The architecture diagram and reference files for this project can be found in th
    sudo mysql -u admin -p -h <DB-Server-Private-IP-address>
    ```
 
-2. Enable TCP port 80 in the Inbound Rules for the web server EC2 and access the WordPress setup in your browser.
+2. MySQL port 3306 on DB Server EC2 should be allowed for wordpress server private IP.
+
+   ![step2-01](steps/Step2-01.png)
+
+3. Wordpress Server should have 443 port allow for the users to access wordpress website.
+
+   ![step2-02](steps/Step2-02.png)
+
+4. Access you wordpress website using your configured domain name (Route53) or IPAddress (port 80 allow)
+
+   ![step2-03](steps/Step2-03.png)
+   
+Fill out your DB credentials:
+
+   ![step2-04](steps/Step2-04.png)
+   
+If you see this message – it means your WordPress has successfully connected to your remote MySQL database
+
+   ![step2-05](steps/Step2-05.png)
+
+5. Finally your website will be up and running.
+
+Note : In addition, To improve website performance and ensure high availability, you can use **Autoscaling** and **Load Balancing**. Autoscaling automatically adjusts the number of servers based on demand, ensuring your application can handle traffic spikes. Load Balancing evenly distributes traffic across servers, preventing any single server from becoming overwhelmed and improving reliability
 
 ---
 
@@ -276,5 +298,3 @@ The architecture diagram and reference files for this project can be found in th
 This guide provides detailed steps for deploying a WordPress web solution with MySQL using EC2 instances on AWS. The LVM configuration ensures efficient storage management for the application data and logs, while separating the database server enhances security.
 
 --- 
-
-You can now use this for your project!
