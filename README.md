@@ -105,9 +105,7 @@ The architecture diagram and reference files for this project can be found in th
    ```
 
 11. Verify PV creation:
-   ```bash
-   sudo pvs
-   ```
+![step1-05](steps/Step1-05.png)
 
 11. Create a volume group (VG) named `webdata-vg`:
    ```bash
@@ -115,9 +113,7 @@ The architecture diagram and reference files for this project can be found in th
    ```
 
 12. Verify VG creation:
-   ```bash
-   sudo vgs
-   ```
+![step1-06](steps/Step1-06.png)
 
 13. Create two logical volumes: `app-lv` and `logs-lv`:
    ```bash
@@ -126,9 +122,7 @@ The architecture diagram and reference files for this project can be found in th
    ```
 
 14. Verify Logical Volume creation:
-   ```bash
-   sudo lvs
-   ```
+![step1-07](steps/Step1-07.png)
 
 15. Verify the entire setup:
    ```bash
@@ -173,6 +167,7 @@ The architecture diagram and reference files for this project can be found in th
    sudo blkid
    sudo vi /etc/fstab
    ```
+![step1-08](steps/Step1-08.png)
 
 23. Test the configuration and reload the daemon:
    ```bash
@@ -181,9 +176,7 @@ The architecture diagram and reference files for this project can be found in th
    ```
 
 24. Verify the setup:
-   ```bash
-   df -h
-   ```
+![step1-09](steps/Step1-09.png)
 
 ### Step 2: Install WordPress on the Web Server
 1. Update the repository:
