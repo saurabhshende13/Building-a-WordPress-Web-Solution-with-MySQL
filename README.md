@@ -105,6 +105,7 @@ The architecture diagram and reference files for this project can be found in th
    ```
 
 11. Verify PV creation:
+
 ![step1-05](steps/Step1-05.png)
 
 11. Create a volume group (VG) named `webdata-vg`:
@@ -113,6 +114,7 @@ The architecture diagram and reference files for this project can be found in th
    ```
 
 12. Verify VG creation:
+
 ![step1-06](steps/Step1-06.png)
 
 13. Create two logical volumes: `app-lv` and `logs-lv`:
@@ -122,6 +124,7 @@ The architecture diagram and reference files for this project can be found in th
    ```
 
 14. Verify Logical Volume creation:
+
 ![step1-07](steps/Step1-07.png)
 
 15. Verify the entire setup:
