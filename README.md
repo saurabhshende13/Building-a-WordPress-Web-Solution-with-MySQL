@@ -1,6 +1,8 @@
 # Building a WordPress Web Solution with MySQL
 
 ![Architecture](project.png)
+
+
 ![Architecture](architechture.png)
 
 This project outlines the process of deploying a scalable WordPress web solution on AWS with MySQL as the database, utilizing EC2, LVM for persistent storage, and Apache with PHP to run the web server.
@@ -29,24 +31,24 @@ The architecture diagram and reference files for this project can be found in th
    
 ![step1-01](steps/Step1-01.png)
 
-3. Create three EBS volumes, each 10 GiB, in the same Availability Zone as your EC2 instance.
+2. Create three EBS volumes, each 10 GiB, in the same Availability Zone as your EC2 instance.
    
 ![step1-02](steps/Step1-02.png)
 
 ![step1-03](steps/Step1-03.png)
 
-5. Open the Linux terminal to begin configuration.
+3. Open the Linux terminal to begin configuration.
    
-6. Use `lsblk` to inspect the attached block devices.
+4. Use `lsblk` to inspect the attached block devices.
 
   ![step1-04](steps/Step1-04.png)
 
-6. Use `df -h` to view all mounts and free space on the server:
+5. Use `df -h` to view all mounts and free space on the server:
    ```bash
    df -h
    ```
 
-8. Use `gdisk` to create a single partition on each disk:
+6. Use `gdisk` to create a single partition on each disk:
    ```bash
    sudo gdisk /dev/xvdb
    sudo gdisk /dev/xvdc
@@ -89,25 +91,25 @@ The architecture diagram and reference files for this project can be found in th
    Now,  your changes has been configured succesfuly, exit out of the gdisk console and do the same for the remaining disks.
    ```
 
-9. Verify the newly configured partitions:
+7. Verify the newly configured partitions:
    ```bash
    lsblk
    ```
 
-10. Install `lvm2` package and run `lvmdiskscan`:
+8. Install `lvm2` package and run `lvmdiskscan`:
    ```bash
    sudo yum install lvm2
    sudo lvmdiskscan
    ```
 
-11. Mark each disk as a physical volume (PV):
+9. Mark each disk as a physical volume (PV):
    ```bash
    sudo pvcreate /dev/xvdb1
    sudo pvcreate /dev/xvdc1
    sudo pvcreate /dev/xvdd1
    ```
 
-11. Verify PV creation:
+10. Verify PV creation:
 
 ![step1-05](steps/Step1-05.png)
 
@@ -280,15 +282,17 @@ The architecture diagram and reference files for this project can be found in th
 
    ![step2-03](steps/Step2-03.png)
    
-Fill out your DB credentials:
+   Fill out your DB credentials:
 
    ![step2-04](steps/Step2-04.png)
    
-If you see this message – it means your WordPress has successfully connected to your remote MySQL database
+   If you see this message – it means your WordPress has successfully connected to your remote MySQL database
 
    ![step2-05](steps/Step2-05.png)
 
 5. Finally your website will be up and running.
+
+   ![step2-06](steps/Step2-06.png)
 
 Note : In addition, To improve website performance and ensure high availability, you can use **Autoscaling** and **Load Balancing**. Autoscaling automatically adjusts the number of servers based on demand, ensuring your application can handle traffic spikes. Load Balancing evenly distributes traffic across servers, preventing any single server from becoming overwhelmed and improving reliability
 
