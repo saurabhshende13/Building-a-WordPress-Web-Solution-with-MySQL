@@ -36,7 +36,7 @@ The architecture diagram and reference files for this project can be found in th
    
 5. Use `lsblk` to inspect the attached block devices:
    
-![step1-04](steps/Step1-04.png)
+  ![step1-04](steps/Step1-04.png)
 
    ```bash
    lsblk
