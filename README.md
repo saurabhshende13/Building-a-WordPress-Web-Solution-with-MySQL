@@ -27,23 +27,27 @@ The architecture diagram and reference files for this project can be found in th
 ### Step 1: Prepare the Web Server
 1. Launch an EC2 instance to serve as the **WordPress Web Server**.
 ![step1-01](steps/Step1-01.png)
-2. Create three EBS volumes, each 10 GiB, in the same Availability Zone as your EC2 instance.
+
+3. Create three EBS volumes, each 10 GiB, in the same Availability Zone as your EC2 instance.
 ![step1-02](steps/Step1-02.png)
 ![step1-03](steps/Step1-03.png)
-3. Open the Linux terminal to begin configuration.
+
+4. Open the Linux terminal to begin configuration.
    
-4. Use `lsblk` to inspect the attached block devices:
+5. Use `lsblk` to inspect the attached block devices:
+   
 ![step1-04](steps/Step1-04.png)
+
    ```bash
    lsblk
    ls /dev/
    ```
-5. Use `df -h` to view all mounts and free space on the server:
+7. Use `df -h` to view all mounts and free space on the server:
    ```bash
    df -h
    ```
 
-6. Use `gdisk` to create a single partition on each disk:
+8. Use `gdisk` to create a single partition on each disk:
    ```bash
    sudo gdisk /dev/xvdb
    sudo gdisk /dev/xvdc
@@ -86,18 +90,18 @@ The architecture diagram and reference files for this project can be found in th
    Now,  your changes has been configured succesfuly, exit out of the gdisk console and do the same for the remaining disks.
    ```
 
-8. Verify the newly configured partitions:
+9. Verify the newly configured partitions:
    ```bash
    lsblk
    ```
 
-9. Install `lvm2` package and run `lvmdiskscan`:
+10. Install `lvm2` package and run `lvmdiskscan`:
    ```bash
    sudo yum install lvm2
    sudo lvmdiskscan
    ```
 
-10. Mark each disk as a physical volume (PV):
+11. Mark each disk as a physical volume (PV):
    ```bash
    sudo pvcreate /dev/xvdb1
    sudo pvcreate /dev/xvdc1
