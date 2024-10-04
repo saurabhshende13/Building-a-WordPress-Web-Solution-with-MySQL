@@ -27,7 +27,7 @@ The architecture diagram and reference files for this project can be found in th
 ## Steps
 
 ### Step 1: Prepare the Web Server
-1. Launch an EC2 instance to serve as the **WordPress Web Server**.
+1. Launch an EC2 instance to serve as the **WordPress Web Server** in Public Subnet in VPC01.
    
 ![step1-01](steps/Step1-01.png)
 
@@ -238,7 +238,7 @@ The architecture diagram and reference files for this project can be found in th
    sudo setsebool -P httpd_can_network_connect=1
    ```
 
-### Step 3: Install MySQL on the Database Server
+### Step 3: Create a Database Server in Private Subnet in VPC01
 1. Update the repository and install MySQL:
    ```bash
    sudo yum update
