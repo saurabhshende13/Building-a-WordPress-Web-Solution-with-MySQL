@@ -1,5 +1,7 @@
 # Building a WordPress Web Solution with MySQL
 
+![Architecture](project.png)
+
 This project outlines the process of deploying a scalable WordPress web solution on AWS with MySQL as the database, utilizing EC2, LVM for persistent storage, and Apache with PHP to run the web server.
 
 ## Table of Contents
@@ -17,7 +19,7 @@ This project outlines the process of deploying a scalable WordPress web solution
 This project involves setting up a WordPress website with a MySQL database hosted on separate EC2 instances. The web server is configured using LVM for data and log storage, while MySQL is installed on a separate instance to improve scalability and security. The entire infrastructure is designed for persistent storage, performance, and security.
 
 ## Architecture
-![Architecture]()
+The architecture diagram and reference files for this project can be found in the [GitHub repository](https://github.com/saurabhshende13/Building-a-WordPress-Web-Solution-with-MySQL.git).
 
 ## Steps
 
